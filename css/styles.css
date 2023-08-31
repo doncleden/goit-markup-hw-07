@@ -36,7 +36,7 @@ html {
 
 img {
   display: block;
-  width: 100%;
+  /* width: 100%; */
   max-width: 100%;
   height: auto;
 }
@@ -73,7 +73,7 @@ body {
 }
 
 .container {
-  width: 428px;
+  width: 100%;
   padding: 0 15px;
   margin: 0 auto;
 
@@ -125,7 +125,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 70px;
+
+  @media screen and (min-width: 768px) {
+    height: 80px;
+  }
 }
 
 .navigation {
@@ -282,7 +286,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  padding: 48px 40px;
+  padding: 80px 40px 40px 40px;
   background-color: var(--white);
   z-index: 200;
 
@@ -299,8 +303,8 @@ body {
   top: 24px;
   right: 24px;
   padding: 0;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   background-color: var(--cornflower);
   color: var(--navyblue);
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -408,8 +412,8 @@ body {
 /* HERO section */
 .hero {
   background-color: var(--navyblue);
-  padding: 200px 0;
-  height: 600px;
+  padding: 112px 0;
+  /* height: 600px; */
   margin: 0 auto;
   text-align: center;
   background-image: linear-gradient(
@@ -447,7 +451,7 @@ body {
         rgba(46, 47, 66, 0.7)
       ),
       url(../images/hero-bg-d.jpg);
-    background-size: 1440px, 1440px;
+    /* background-size: 1440px, 1440px; */
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
@@ -515,28 +519,34 @@ body {
 .benefits.list {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -30px;
-  margin-top: -30px;
+  flex-direction: column;
+  gap: 72px;
+  /* margin-left: -30px;
+  margin-top: -30px; */
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 72px 24px;
+  }
 
   @media screen and (min-width: 1158px) {
     flex-wrap: nowrap;
+    gap: 24px;
   }
 }
 
 .benefits .item {
-  margin-left: 30px;
-  margin-top: 30px;
+  /* margin-left: 30px;
+  margin-top: 30px; */
+  /* display: flex; */
+  margin: 0;
 
   @media screen and (min-width: 768px) {
     flex-basis: calc(100% / 2 - 30px);
-    margin-left: 30px;
-    margin-top: 30px;
   }
 
   @media screen and (min-width: 1158px) {
     flex-basis: calc(100% / 4 - 30px);
-    margin-left: 30px;
-    margin-top: 30px;
   }
 }
 
@@ -589,7 +599,7 @@ body {
   color: var(--slate);
   line-height: 1.71;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
 
   @media screen and (min-width: 768px) {
     font-weight: 500;
@@ -668,6 +678,15 @@ body {
 .team.list {
   display: flex;
   justify-content: center;
+}
+
+.team .team-card {
+  flex-basis: unset;
+  width: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    margin: 0;
+  }
 }
 
 .team-card {
@@ -920,8 +939,8 @@ body {
 .footer {
   display: flex;
   flex-wrap: wrap;
-  margin-top: -12px;
-  margin-left: -50px;
+  /* margin-top: -12px;
+  margin-left: -50px; */
   align-items: baseline;
 }
 
@@ -936,7 +955,7 @@ body {
   }
 
   @media screen and (min-width: 1158px) {
-    margin-left: -108px;
+    margin-left: -168px;
   }
 }
 
@@ -1127,7 +1146,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   border-radius: 4px;
   background-color: var(--white);
@@ -1136,7 +1155,7 @@ body {
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  @media screen and (min-width: 428px) {
+  @media screen and (min-width: 408px) {
     width: 408px;
     height: auto;
   }
