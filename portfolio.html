@@ -27,29 +27,141 @@
           </a>
 
           <ul class="nav-menu list">
-            <li class="item">
-              <a class="page link" href="./index.html">Studio</a>
+            <li class="nav-menu-item">
+              <a class="page current link" href="./index.html">Studio</a>
             </li>
-            <li class="item">
-              <a class="page current link" href="./portfolio.html">Portfolio</a>
+            <li class="nav-menu-item">
+              <a class="page link" href="./portfolio.html">Portfolio</a>
             </li>
-            <li class="item">
+            <li class="nav-menu-item">
               <a class="page link" href="#">Contacts</a>
             </li>
           </ul>
         </nav>
         <ul class="contacts-menu list">
           <li class="item">
-            <a class="contact link" href="mailto:info@devstudio.com"
+            <a
+              class="contacts link"
+              href="mailto:info@devstudio.com"
+              target="blank"
+              rel="noopener noreferrer"
               >info@devstudio.com</a
             >
           </li>
           <li class="item">
-            <a class="contact link" href="tel:+110001111111"
+            <a
+              class="contacts link"
+              href="tel:+110001111111"
+              target="blank"
+              rel="noopener noreferrer"
               >+11 (000) 111-11-11</a
             >
           </li>
         </ul>
+
+        <button
+          class="menu-toggle js-open-menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="menu-icon" width="32" height="32">
+            <use href="./images/icons.svg#hamburger-open"></use>
+          </svg>
+        </button>
+        <div class="menu-container js-menu-container" id="mobile-menu">
+          <button class="menu-toggle hamburger-close-button js-close-menu">
+            <svg class="menu-icon" width="24" height="24">
+              <use href="./images/icons.svg#hamburger-close"></use>
+            </svg>
+          </button>
+          <ul class="hamburger-menu-list list">
+            <li class="hamburger-menu-item">
+              <a
+                href="./index.html"
+                class="hamburger-menu-link link menu-active"
+                >Studio</a
+              >
+            </li>
+            <li class="hamburger-menu-item">
+              <a href="./portfolio.html" class="hamburger-menu-link link"
+                >Portfolio</a
+              >
+            </li>
+            <li class="hamburger-menu-item">
+              <a href="#" class="hamburger-menu-link link">Contacts</a>
+            </li>
+          </ul>
+          <div class="hamburger-wrapper">
+            <address class="hamburger-address">
+              <ul class="hamburger-address-list list">
+                <li class="hamburger-address-item">
+                  <a
+                    href="tel:+110001111111"
+                    class="hamburger-address-link highlight link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >+11 (000) 111-11-11</a
+                  >
+                </li>
+                <li class="hamburger-address-item">
+                  <a
+                    href="mailto:info@devstudio.com"
+                    class="hamburger-address-link link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >info@devstudio.com</a
+                  >
+                </li>
+              </ul>
+            </address>
+
+            <ul class="hamburger-social-list list">
+              <li class="hamburger-social-item">
+                <a
+                  class="hamburger-social-link link"
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg class="hamburger-social-icon" width="16" height="16">
+                    <use href="./images/icons.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="hamburger-social-item">
+                <a
+                  href="https://www.twitter.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hamburger-social-link link"
+                  ><svg class="hamburger-social-icon" width="16" height="16">
+                    <use href="./images/icons.svg#icon-twitter"></use></svg
+                ></a>
+              </li>
+              <li class="hamburger-social-item">
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hamburger-social-link link"
+                  ><svg class="hamburger-social-icon" width="16" height="16">
+                    <use href="./images/icons.svg#icon-facebook"></use></svg
+                ></a>
+              </li>
+              <li class="hamburger-social-item">
+                <a
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hamburger-social-link link"
+                  ><svg class="hamburger-social-icon" width="16" height="16">
+                    <use href="./images/icons.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -284,7 +396,7 @@
 
     <!-- Footer -->
     <footer class="page-footer">
-      <div class="container">
+      <div class="container footer-container">
         <!-- Main Footer -->
         <div class="footer">
           <!-- Footer Section 1 -->
@@ -361,27 +473,33 @@
           <!-- Footer Section 3 -->
           <div class="footer-subscribe">
             <b class="footer-heading">Subscribe</b>
-            <form>
-              <div class="subscribe-block">
-                <label>
-                  <input
-                    class="field-email"
-                    type="email"
-                    name="email"
-                    placeholder="E-mail"
-                  />
-                </label>
-                <button class="button subscribe" type="submit">
-                  Subscribe
-                  <svg class="subs-icon" width="24" height="24">
-                    <use href="./images/icons.svg#icon-send"></use>
-                  </svg>
-                </button>
-              </div>
+            <form
+              class="form-footer-subscribe"
+              name="subscribe-form"
+              autocomplete="on"
+            >
+              <label>
+                <input
+                  class="field-email"
+                  type="email"
+                  name="email"
+                  placeholder="E-mail"
+                  required
+                />
+              </label>
+              <button class="button subscribe" type="submit">
+                Subscribe
+                <svg class="subs-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-send"></use>
+                </svg>
+              </button>
             </form>
           </div>
         </div>
       </div>
     </footer>
+
+    <!-- HAMBURGER MENU script -->
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>
